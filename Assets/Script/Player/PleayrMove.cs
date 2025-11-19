@@ -47,6 +47,7 @@ public class PleayrMove : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
+
         Gizmos.DrawWireSphere(transform.position + Indentation, checkRadius);
     }
 
@@ -61,8 +62,10 @@ public class PleayrMove : MonoBehaviour
     private void WallJump(int direction)
     {
         StartCoroutine(JumpWall());
+        //rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(objectToRotate.transform.right * jumpForce * direction, ForceMode2D.Impulse);
         print("Jump");
+
     }
 
     private bool CheckWall(Transform wallCheck)
