@@ -5,16 +5,15 @@ using UnityEngine;
 public class PlayerAtac : WeaponGeneral
 {
     [SerializeField] private float hitBoxLifeTime;
+    private IAttack currentAttack;
 
+    private void Start()
+    {
+        currentAttack = new Attack1();
+    }
     protected override void Attack()
     {
-        StartCoroutine(HitBoxDelay());
-    }
-
-    private IEnumerator HitBoxDelay()
-    {
-        attackOdject.SetActive(true);
-        yield return new WaitForSeconds(hitBoxLifeTime);
-        attackOdject.SetActive(false);
+        Debug.Log("Attack");
+        currentAttack.Attack(hitBoxLifeTime, attackOdject);
     }
 }
