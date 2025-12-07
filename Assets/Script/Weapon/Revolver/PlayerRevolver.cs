@@ -53,9 +53,11 @@ public class PlayerRevolver : WeaponGeneral
     {
         if ( bankAmmo > 0 )
         {
+            int a = maxAmmo - curentAmmo;
+
             reloadingARevolver = false;
 
-            for (int i = 0; i < maxAmmo; i++)
+            for (int i = 0; i < a; i++)
             {
                 yield return new WaitForSeconds(0.5f);
                 curentAmmo += 1;

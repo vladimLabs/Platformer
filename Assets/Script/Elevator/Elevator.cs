@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Elevator : MonoBehaviour
 {
     [SerializeField] private List<Transform> points = new List<Transform>();
     [SerializeField] private float speed;
+    [SerializeField] private GameObject elevatorCanvas;
     private bool elevetorStart = false;
     private int currentFloor = 0;
     private int targetFloor;
 
+    //private void Start()
+    //{
+    //}
     private void Update()
     {
         if (elevetorStart == true)
@@ -23,13 +27,22 @@ public class Elevator : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            StartCoroutine(TimerStart());
+            elevatorCanvas.SetActive(true);
+            //StartCoroutine(TimerStart());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            elevetorStart = false;
+            elevatorCanvas.SetActive(false);
         }
     }
 
     IEnumerator TimerStart()
     {
-        targetFloor = currentFloor + 1;
         if (targetFloor >= points.Count)
         {
             targetFloor = 0;
@@ -43,12 +56,9 @@ public class Elevator : MonoBehaviour
     {
         transform.position = Vector3.Lerp(transform.position, points[targetFloor].position, Time.deltaTime * speed);
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    public void StartElevator(int point)
     {
-        if (collision.CompareTag("Player"))
-        {
-            elevetorStart = false;
-        }
+        targetFloor = point;
+        StartCoroutine(TimerStart());
     }
 }
