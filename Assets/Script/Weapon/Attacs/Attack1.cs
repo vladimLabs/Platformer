@@ -1,18 +1,55 @@
-using System.Collections;
 using UnityEngine;
 
 public class Attack1 : IAttack
 {
-    public void Attack(float hitBoxLifeTime, GameObject attackObject)
+    private LayerMask mask;
+    private float size = 2;
+    private float damage = 2;
+    
+    public void Attack(LayerMask enemyLayerMask, GameObject attackObject, PleayrMove playerMove)
     {
+        mask = enemyLayerMask;
         Debug.Log("Attack 1");
-        //StartCoroutine(HitBoxDelay(hitBoxLifeTime, attackObject));
+        
+        // Получаем направление атаки (right в 2D)
+        Vector2 direction = attackObject.transform.right;
+        
+        // Используем Physics2D.Raycast для 2D
+        RaycastHit2D hit = Physics2D.Raycast(
+            attackObject.transform.position, 
+            direction, 
+            size, 
+            mask
+        );
+        
+        if (hit.collider != null)
+        {
+            // Визуализация луча
+            Debug.DrawRay(
+                attackObject.transform.position, 
+                direction * hit.distance, 
+                Color.yellow, 
+                1
+            );
+            
+            // Получаем компонент здоровья врага
+            EnemyHealth enemyHealth = hit.transform.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.GetDamage(damage);
+                Debug.Log("Did Hit");
+            }
+        }
+        else
+        {
+            // Визуализация луча, если ничего не попало
+            Debug.DrawRay(
+                attackObject.transform.position, 
+                direction * size, 
+                Color.white, 
+                1
+            );
+        }
     }
-
-    //private IEnumerator HitBoxDelay(float hitBoxLifeTime, GameObject attackObject)
-    //{
-    //    attackObject.SetActive(true);
-    //    yield return new WaitForSeconds(hitBoxLifeTime);
-    //    attackObject.SetActive(false);
-    //}
 }
+

@@ -85,6 +85,13 @@ public class PleayrMove : MonoBehaviour
         wallJumping = false;
     }
 
+    public void Dash()
+    {
+        StartCoroutine(JumpWall());
+        //rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+        rb.AddForce(objectToRotate.transform.right * jumpForce, ForceMode2D.Impulse);
+    }
+
     private void FlipCharacter()
     {
         if (rb.linearVelocityX > 0)
