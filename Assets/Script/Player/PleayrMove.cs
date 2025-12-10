@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class PleayrMove : MonoBehaviour
     [SerializeField] private Animator animator;
 
     private bool wallJumping;
+    private bool isWallrunning;
 
     void Update()
     {
@@ -36,11 +38,17 @@ public class PleayrMove : MonoBehaviour
             }
         }
 
+        if (isWallrunning && Input.GetKeyUp(KeyCode.Space))
+        {
+            Jump();
+        }
+
         FlipCharacter();
     }
 
     private void Jump()
     {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
@@ -101,6 +109,24 @@ public class PleayrMove : MonoBehaviour
         if (rb.linearVelocityX < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+     
+        if (other.CompareTag("Wallrun") && Input.GetKey(KeyCode.Space) && !wallJumping)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+            isWallrunning = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Wallrun"))
+        {
+            isWallrunning = false;
         }
     }
 }

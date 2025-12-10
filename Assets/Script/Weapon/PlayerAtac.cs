@@ -11,6 +11,7 @@ public class PlayerAtac : WeaponGeneral
     private List<IAttack> attacks = new List<IAttack>();
     private IAttack currentAttack;
     private int attackIndex = 0;
+    private float damageMult = 1;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class PlayerAtac : WeaponGeneral
     }
     protected override void Attack()
     {
-        currentAttack.Attack(layerMask, attackOdject, playerMove);
+        currentAttack.Attack(layerMask, attackOdject, playerMove, damageMult);
         attackIndex++;
         if (attackIndex == attacks.Count)
         {
@@ -30,5 +31,10 @@ public class PlayerAtac : WeaponGeneral
         }
         currentAttack = attacks[attackIndex];
 
+    }
+
+    public void AddDamage(float damage)
+    {
+        damageMult += damage;
     }
 }
