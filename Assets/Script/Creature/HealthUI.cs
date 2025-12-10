@@ -1,17 +1,14 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthUI : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> heart;
-    [SerializeField] private GameObject heartImg;
-    [SerializeField] private GameObject heartUI;
+    [SerializeField] private GameObject[] heart;
     private int heartCount = 0;
 
     public void ChangeHeartsCount(int heartToChange)
     {
         heartCount += heartToChange;
-        for (int i = 0; i < heart.Count ; i++)
+        for (int i = 0; i < heart.Length ; i++)
         {
             if (i <= heartCount - 1)
             {
@@ -26,11 +23,6 @@ public class HealthUI : MonoBehaviour
 
     private void Start()
     {
-        heartCount = heart.Count;
-    }
-
-    public void AddHp()
-    {
-        heart.Add(Instantiate(heartImg, heartUI.transform));
+        heartCount = heart.Length;
     }
 }

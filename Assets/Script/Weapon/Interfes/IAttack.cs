@@ -3,7 +3,7 @@ using UnityEngine;
 
 public interface IAttack
 {
-    public void Attack(LayerMask enemyLayerMask, GameObject attackObject, PleayrMove playerMove, float damageMult)
+    public void Attack(LayerMask enemyLayerMask, GameObject attackObject, PleayrMove playerMove)
     {
 
     }

@@ -14,8 +14,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Player/PleayrMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Shop/Shop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Weapon/Attacs/Attack2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Weapon/Attacs/Attack3.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -30,7 +28,6 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -53,7 +50,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:\Unity\6000.2.3f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="G:\UnityVersions\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\GitHub\Platformer -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\GitHub\Platformer" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -64,7 +61,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:\Unity\6000.2.3f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="G:\UnityVersions\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\GitHub\Platformer -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\GitHub\Platformer" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -111,7 +108,6 @@
       <option name="presentableId" value="Default" />
       <updated>1765240425926</updated>
       <workItem from="1765240429978" duration="1525000" />
-      <workItem from="1765330108903" duration="1685000" />
     </task>
     <servers />
   </component>

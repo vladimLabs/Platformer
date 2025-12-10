@@ -6,7 +6,7 @@ public class Attack1 : IAttack
     private float size = 2;
     private float damage = 2;
     
-    public void Attack(LayerMask enemyLayerMask, GameObject attackObject, PleayrMove playerMove, float damageMult)
+    public void Attack(LayerMask enemyLayerMask, GameObject attackObject, PleayrMove playerMove)
     {
         mask = enemyLayerMask;
         Debug.Log("Attack 1");
@@ -36,7 +36,7 @@ public class Attack1 : IAttack
             EnemyHealth enemyHealth = hit.transform.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                enemyHealth.GetDamage(damage * damageMult);
+                enemyHealth.GetDamage(damage);
                 Debug.Log("Did Hit");
             }
         }

@@ -7,7 +7,6 @@ TagManager:
   - Enemy
   - Obstacle
   - Interactive
-  - Wallrun
   layers:
   - Default
   - TransparentFX
