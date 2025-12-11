@@ -4,10 +4,11 @@ public class EnemyMove : MonoBehaviour
 {
     [SerializeField] private float speedEnemy;
     [SerializeField] private Rigidbody2D rb;
+    private GameObject pLayer;
 
     void Start()
     {
-        
+        pLayer = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -17,7 +18,6 @@ public class EnemyMove : MonoBehaviour
 
     private void MoveEn()
     {
-        GameObject pLayer = GameObject.FindGameObjectWithTag("Player");
         if (pLayer != null)
         {
             Debug.Log("Чапаю");
