@@ -20,7 +20,6 @@ public class EnemyMove : MonoBehaviour
     {
         if (pLayer != null)
         {
-            Debug.Log("Чапаю");
             Vector2 movement = new Vector2(speedEnemy, rb.linearVelocityY);
             rb.linearVelocity = movement;
         }
