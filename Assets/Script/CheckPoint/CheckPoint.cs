@@ -14,5 +14,6 @@ public class CheckPoint : MonoBehaviour, IPickable
     public void PickUp()
     {
         checkpointManager.SetCurrentCheckPoint(checkPointIndex);
+        GameAnalyticsManager.FunnelFinished(checkPointIndex, "checkPoint");
     }
 }

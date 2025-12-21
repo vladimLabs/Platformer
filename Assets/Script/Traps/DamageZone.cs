@@ -9,6 +9,7 @@ public class DamageZone : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            GameAnalyticsManager.ErrorEvent();
             collision.GetComponent<PleayrHealth>().GetDamage(damage);
         }
     }

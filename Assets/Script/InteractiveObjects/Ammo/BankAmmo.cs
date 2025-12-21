@@ -6,5 +6,6 @@ public class BankAmmo : MonoBehaviour, IPickable
     {
         FindAnyObjectByType<PlayerRevolver>().AddAmmo(6);
         Destroy(gameObject);
+            //GameAnalyticsManager.AmmoPicked();
     }
 }

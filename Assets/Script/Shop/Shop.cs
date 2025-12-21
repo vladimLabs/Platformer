@@ -21,6 +21,7 @@ public class Shop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             ShopPanel.SetActive(true);
+            GameAnalyticsManager.Shop();
         }
     }
 

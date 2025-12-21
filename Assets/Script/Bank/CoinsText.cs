@@ -16,4 +16,10 @@ public class CoinsText : MonoBehaviour
     {
         text.text = Coin.ToString();
     }
+
+    public static void SendCoins()
+    {
+        GameAnalyticsManager.Money(Coin);
+        Debug.unityLogger.Log(Coin);
+    }
 }
