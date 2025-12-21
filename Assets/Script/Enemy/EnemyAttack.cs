@@ -5,6 +5,9 @@ public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private GameObject attacker;
+    [SerializeField] private Animator animator;
+    [SerializeField] private int attackCombo;
+    private int currentAttack;
     private float detectionDistance = 5f;
     private bool startAttack = true;
 
@@ -17,8 +20,6 @@ public class EnemyAttack : MonoBehaviour
             if (distance <= detectionDistance && startAttack == true)
             {
                 StartCoroutine(FarmAttack());
-                Debug.Log("Враг близко! Расстояние: " + distance.ToString("F2"));
-
             }
         }
     }
@@ -27,8 +28,11 @@ public class EnemyAttack : MonoBehaviour
     {
         startAttack = false;
         attacker.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        animator.SetInteger("AttackNum", Random.Range(0, attackCombo));
+        animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.1f);
         attacker.SetActive(false);
+        yield return new WaitForSeconds(2f);
         startAttack = true;
     }
 }

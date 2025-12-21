@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5959661070461357535}
   - component: {fileID: 5213670635405412151}
   - component: {fileID: 2466072995293928959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,13 +25,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563990819118079906}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4279061397417519485}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ->
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3731978186251217248}
   - component: {fileID: 3381787157714663260}
   - component: {fileID: 5120633118536621211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ MonoBehaviour:
   points:
   - {fileID: 0}
   - {fileID: 0}
-  speed: 1
+  speed: 0.3
   elevatorCanvas: {fileID: 4086585054846915035}
 --- !u!61 &5120633118536621211
 BoxCollider2D:
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 2033669779902490286}
   - component: {fileID: 8970814951907873240}
   - component: {fileID: 1047420542608872838}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 8185244497407451040}
   - component: {fileID: 8766350103289026724}
   - component: {fileID: 4917014453346887072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elevator Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 1468802573336364513}
   - component: {fileID: 816713049021120977}
   - component: {fileID: 7481150573517174809}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2449307232857825875}
   - component: {fileID: 4116965314966224260}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8619284684801419118}
   - component: {fileID: 2802945924081183042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'Elevator light '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 4659485019265717533}
   - component: {fileID: 945951345506118099}
   - component: {fileID: 3283549661872002327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +834,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <-
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -915,7 +915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 632581051805203420}
   - component: {fileID: 3580811487274156213}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 7398754904567041991}
   - component: {fileID: 1492117415775805613}
   - component: {fileID: 6420158587825785643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1009,14 +1009,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7647193065873737487}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4659485019265717533}
   m_Father: {fileID: 1468802573336364513}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -5, y: 160}

@@ -31,7 +31,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "WallRunAndShop",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,6 +112,7 @@
       <updated>1765240425926</updated>
       <workItem from="1765240429978" duration="1525000" />
       <workItem from="1765330108903" duration="1685000" />
+      <workItem from="1766340086051" duration="2945000" />
     </task>
     <servers />
   </component>
