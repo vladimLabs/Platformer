@@ -14,6 +14,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c80b42b80a6b4f929e8a04e3926765411f5a00/58/7a96e662/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Player/PleayrMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Shop/Shop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Weapon/Attacs/Attack2.cs" root0="FORCE_HIGHLIGHTING" />
@@ -112,7 +114,7 @@
       <updated>1765240425926</updated>
       <workItem from="1765240429978" duration="1525000" />
       <workItem from="1765330108903" duration="1685000" />
-      <workItem from="1766340086051" duration="2945000" />
+      <workItem from="1766340086051" duration="12709000" />
     </task>
     <servers />
   </component>

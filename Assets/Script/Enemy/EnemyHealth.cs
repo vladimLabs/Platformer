@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem particle;
     [SerializeField] private Animator animator;
     [SerializeField] private float health;
     [SerializeField] private EnemyAttack attacker;
@@ -11,7 +12,7 @@ public class EnemyHealth : MonoBehaviour
     public void GetDamage(float damage)
     {
         health -= damage;
-
+        particle.Play();
         if (health < 0)
         {
             animator.SetTrigger("Death");

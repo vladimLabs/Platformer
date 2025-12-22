@@ -1,9 +1,13 @@
 
+using System.Collections;
 using UnityEngine;
 
-public interface IAttack
+public abstract class IAttack
 {
-    public void Attack(LayerMask enemyLayerMask, GameObject attackObject, PleayrMove playerMove, float damageMult)
+    public float AttackDelay;
+    public float damage;
+
+    public virtual void Attack(LayerMask enemyLayerMask, GameObject attackObject, PleayrMove playerMove, float damageMult)
     {
 
     }

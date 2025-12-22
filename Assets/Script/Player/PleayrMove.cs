@@ -15,6 +15,7 @@ public class PleayrMove : MonoBehaviour
     [SerializeField] private float timeJump;
     [SerializeField] private Animator animator;
 
+    private bool canDash = true;
     private bool wallJumping;
     private bool isWallrunning;
 
@@ -23,6 +24,7 @@ public class PleayrMove : MonoBehaviour
         if (!wallJumping)
         {
             Move();
+            animator.SetBool("IsGrounded", IsGrounded());
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -38,6 +40,12 @@ public class PleayrMove : MonoBehaviour
             }
         }
 
+        if (canDash && Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Dash();
+            animator.SetTrigger("Dash");
+        }
+
         if (isWallrunning && Input.GetKeyUp(KeyCode.Space))
         {
             Jump();
@@ -48,6 +56,7 @@ public class PleayrMove : MonoBehaviour
 
     private void Jump()
     {
+        animator.SetTrigger("Jump");
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
@@ -62,13 +71,14 @@ public class PleayrMove : MonoBehaviour
     private void Move()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        animator.SetBool("Walk", horizontalInput != 0);
+        animator.SetBool("IsWalking", horizontalInput != 0);
         Vector2 movement = new Vector2(horizontalInput * moveSpeed, rb.linearVelocityY);
         rb.linearVelocity = movement;
     }
 
     private void WallJump(int direction)
     {
+        
         StartCoroutine(JumpWall());
         //rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(objectToRotate.transform.right * jumpForce * direction, ForceMode2D.Impulse);
@@ -89,13 +99,20 @@ public class PleayrMove : MonoBehaviour
     private IEnumerator JumpWall()
     {
         wallJumping = true;
+        gameObject.layer = 8;
         yield return new WaitForSeconds(timeJump);
+        gameObject.layer = 3;
         wallJumping = false;
+        yield return new WaitForSeconds(timeJump * 2);
+        canDash = true;
     }
 
     public void Dash()
     {
+        canDash = false;
+       
         StartCoroutine(JumpWall());
+       
         //rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(objectToRotate.transform.right * jumpForce, ForceMode2D.Impulse);
     }

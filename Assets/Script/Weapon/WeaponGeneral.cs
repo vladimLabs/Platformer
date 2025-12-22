@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class WeaponGeneral : MonoBehaviour
 {
-    [SerializeField] protected GameObject attackOdject;
+    [SerializeField] protected GameObject attackObject;
     [SerializeField] protected float damage;
     [SerializeField] protected float timeBetweenAttacks;
 

@@ -32,7 +32,7 @@ public class PlayerRevolver : WeaponGeneral
         if (reloadingARevolver && curentAmmo > 0)
         {
             base.Attack();
-            Instantiate(attackOdject, spp.position, rotationPoint.rotation);
+            Instantiate(attackObject, spp.position, rotationPoint.rotation);
             curentAmmo -= 1;
 
             text.UpdateUI(curentAmmo, bankAmmo);

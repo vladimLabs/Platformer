@@ -27,12 +27,9 @@ public class EnemyAttack : MonoBehaviour
     private IEnumerator FarmAttack()
     {
         startAttack = false;
-        attacker.SetActive(true);
         animator.SetInteger("AttackNum", Random.Range(0, attackCombo));
         animator.SetTrigger("Attack");
-        yield return new WaitForSeconds(0.1f);
-        attacker.SetActive(false);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         startAttack = true;
     }
 }
