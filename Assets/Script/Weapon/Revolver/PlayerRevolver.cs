@@ -5,7 +5,9 @@ public class PlayerRevolver : WeaponGeneral
 {
     [SerializeField] private Transform spp;
     [SerializeField] private Transform rotationPoint;
+    [SerializeField] private Animator animator;
     [SerializeField] private int maxAmmo;
+    [SerializeField] private ParticleSystem shootSFX;
     private int curentAmmo = 0;
     private bool reloadingARevolver = true;
     [SerializeField] private UIAmmo text;
@@ -34,8 +36,9 @@ public class PlayerRevolver : WeaponGeneral
             base.Attack();
             Instantiate(attackObject, spp.position, rotationPoint.rotation);
             curentAmmo -= 1;
-
+            animator.SetTrigger("Shoot");
             text.UpdateUI(curentAmmo, bankAmmo);
+            shootSFX.Play();
             //if (reloadingARevolver && curentAmmo == 0)
             //{
             //    StartCoroutine(Reloading());

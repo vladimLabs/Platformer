@@ -93,6 +93,7 @@ public class PleayrMove : MonoBehaviour
 
     private bool IsGrounded()
     {
+        if (isWallrunning) return true;
         return Physics2D.OverlapCircle(transform.position + Indentation, checkRadius, groundLayer);
     }
 
@@ -135,6 +136,7 @@ public class PleayrMove : MonoBehaviour
         if (other.CompareTag("Wallrun") && Input.GetKey(KeyCode.Space) && !wallJumping)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+            animator.SetBool("IsWalking", isWallrunning);
             isWallrunning = true;
         }
     }
