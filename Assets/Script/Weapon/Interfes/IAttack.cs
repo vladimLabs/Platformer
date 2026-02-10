@@ -7,7 +7,7 @@ public abstract class IAttack
     public float AttackDelay;
     public float damage;
 
-    public virtual void Attack(LayerMask enemyLayerMask, GameObject attackObject, PleayrMove playerMove, float damageMult)
+    public virtual void Attack(LayerMask enemyLayerMask, GameObject attackObject, PlayerController playerMove, float damageMult)
     {
 
     }

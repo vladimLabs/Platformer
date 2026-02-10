@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
-    [SerializeField] private float fireRate = 1f; // Скорострельность (выстрелов в секунду)
-    [SerializeField] private Transform firePoint; // Точка вылета пули
-    [SerializeField] private GameObject bulletPrefab; // Префаб пули
-    [SerializeField] private Transform rotationPart; // Вращающаяся часть турели
+    [SerializeField] private float fireRate = 1f; 
+    [SerializeField] private Transform firePoint; 
+    [SerializeField] private GameObject bulletPrefab; 
+    [SerializeField] private Transform rotationPart;
     [SerializeField] private float offset;
-    [SerializeField] private float detectionRadius = 5f; // Радиус обнаружения
+    [SerializeField] private float detectionRadius = 5f;
     
-    // Ссылки
+    [SerializeField] private ObjectPooler objectPooler;
+    
     private Transform player;
     private bool playerInRange = false;
     private float fireTimer = 0f;
 
     private bool isShot = false;
-
-    // Визуализация радиуса в редакторе
+    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -29,7 +29,6 @@ public class TurretController : MonoBehaviour
     {
         if (playerInRange && player != null)
         {
-            // Поворот турели в сторону игрока
             AimAtPlayer();
             if (!isShot) StartCoroutine(ShootLine());
         }
@@ -39,13 +38,10 @@ public class TurretController : MonoBehaviour
     {
         if (rotationPart == null) return;
         
-        // Получаем направление к игроку
         Vector2 direction = player.position - rotationPart.position;
         
-        // Вычисляем угол поворота
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         
-        // Применяем поворот
         rotationPart.rotation = Quaternion.Euler(0f, 0f, angle + offset);
     }
     
@@ -53,8 +49,12 @@ public class TurretController : MonoBehaviour
     {
         if (bulletPrefab == null || firePoint == null) return;
         
-        // Создаем пулю
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = objectPooler.GetFromPool(
+            bulletPrefab.name, 
+            firePoint.position, 
+            rotationPart.rotation
+        );
+
     }
 
     IEnumerator ShootLine()
@@ -79,7 +79,7 @@ public class TurretController : MonoBehaviour
         {
             player = other.transform;
             playerInRange = true;
-            fireTimer = 0f; // Сбрасываем таймер при первом обнаружении
+            fireTimer = 0f; 
         }
     }
     

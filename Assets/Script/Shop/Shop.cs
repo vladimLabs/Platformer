@@ -4,7 +4,7 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     [SerializeField] private GameObject ShopPanel;
-    [SerializeField] private PlayerAtac playerAtac;
+    [SerializeField] private PlayerMeleWeapon playerAtac;
     [SerializeField] private HealthUI pleayrHealth;
     
 

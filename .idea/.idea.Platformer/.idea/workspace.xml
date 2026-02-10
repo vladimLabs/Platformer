@@ -16,7 +16,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c80b42b80a6b4f929e8a04e3926765411f5a00/58/7a96e662/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Player/PleayrMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/ClosedDoor/ClosedDoor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/ObjectPool/ObjectPoolItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/ObjectPool/ObjectPooler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Shop/Shop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Weapon/Attacs/Attack2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Weapon/Attacs/Attack3.cs" root0="FORCE_HIGHLIGHTING" />
@@ -117,7 +119,9 @@
       <workItem from="1765330108903" duration="1685000" />
       <workItem from="1766340086051" duration="12709000" />
       <workItem from="1766613222387" duration="2248000" />
-      <workItem from="1769028193065" duration="691000" />
+      <workItem from="1769028193065" duration="4367000" />
+      <workItem from="1769370489415" duration="34000" />
+      <workItem from="1770745578205" duration="2750000" />
     </task>
     <servers />
   </component>

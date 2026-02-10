@@ -8,7 +8,7 @@ public class Attack3 : IAttack
     private float size = 4;
     public float damage = 2;
     
-    public void Attack(LayerMask enemyLayerMask, GameObject attackObject, PleayrMove playerMove, float damageMult)
+    public void Attack(LayerMask enemyLayerMask, GameObject attackObject, PlayerController playerMove, float damageMult)
     {
         mask = enemyLayerMask;
         Debug.Log("Attack 3");

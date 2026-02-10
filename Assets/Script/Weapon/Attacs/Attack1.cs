@@ -9,7 +9,7 @@ public class Attack1 : IAttack
     public float damage = 2;
     private float delay;
     
-    public override void Attack(LayerMask enemyLayerMask, GameObject attackObject, PleayrMove playerMove, float damageMult)
+    public override void Attack(LayerMask enemyLayerMask, GameObject attackObject, PlayerController playerMove, float damageMult)
     {
         mask = enemyLayerMask;
         Debug.Log("Attack 1");

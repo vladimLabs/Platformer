@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 7885302446457856518}
   - component: {fileID: 4529012336978566977}
   - component: {fileID: 1462824124855471575}
+  - component: {fileID: 4503518229771153026}
   m_Layer: 0
   m_Name: Turell
   m_TagString: Untagged
@@ -244,6 +245,22 @@ MonoBehaviour:
   rotationPart: {fileID: 2041637634181027822}
   offset: 0
   detectionRadius: 15
+  objectPooler: {fileID: 4503518229771153026}
+--- !u!114 &4503518229771153026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449036710921481299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd845670af8c7e34388d773304932d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
+  itemsToPool:
+  - prefab: {fileID: 1219837465348590796, guid: 4e715c9d2ac9e604e9e91a28c2ec08d1, type: 3}
+    poolSize: 20
 --- !u!1 &4421390275774223918
 GameObject:
   m_ObjectHideFlags: 0
