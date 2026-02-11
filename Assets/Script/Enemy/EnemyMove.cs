@@ -23,8 +23,8 @@ public class EnemyMove : MonoBehaviour
 
     private void MoveEnemy()
     {
-        if(player.transform.position.x > transform.position.x) gameObject.transform.localScale = new Vector3(-1, 1, 1);
-        else gameObject.transform.localScale = new Vector3(1, 1, 1);
+        if(player.transform.position.x - transform.position.x > 1) gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        if(player.transform.position.x - transform.position.x < -1) gameObject.transform.localScale = new Vector3(1, 1, 1);
         Vector2 movement = new Vector2(speedEnemy * transform.localScale.x * -1, rb.linearVelocityY);
         animator.SetBool("IsWalking", rb.linearVelocity.magnitude > 0);
         rb.linearVelocity = movement;

@@ -110,6 +110,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
+        
         canDash = false;
        
         StartCoroutine(JumpWall());

@@ -5,7 +5,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private ParticleSystem particle;
     [SerializeField] private Animator animator;
     [SerializeField] private float health;
-    [SerializeField] private EnemyAttack attacker;
+    [SerializeField] private EnemyAttackGeneral attacker;
     [SerializeField] private EnemyMove move;
     [SerializeField] private CapsuleCollider2D capsule;
     [SerializeField] private Rigidbody2D rb;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckpointManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class CheckpointManager : MonoBehaviour
             index++;
         }
 
-        lastCheckPoint = PlayerPrefs.GetInt("CheckPoint");
+        lastCheckPoint = PlayerPrefs.GetInt("CheckPoint" + SceneManager.GetActiveScene().buildIndex);
 
         player.transform.position = checkPoints[lastCheckPoint].transform.position;
     }
@@ -25,7 +26,7 @@ public class CheckpointManager : MonoBehaviour
     {
         print(index);
         lastCheckPoint = index;
-        PlayerPrefs.SetInt("CheckPoint", index);
+        PlayerPrefs.SetInt("CheckPoint" + SceneManager.GetActiveScene().buildIndex, index);
     }
 
 }

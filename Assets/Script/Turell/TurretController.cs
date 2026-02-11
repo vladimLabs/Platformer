@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class TurretController : MonoBehaviour
+public class TurretController : EnemyAttackGeneral
 {
     [SerializeField] private float fireRate = 1f; 
     [SerializeField] private Transform firePoint; 

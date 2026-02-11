@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class EnemyAttack : EnemyAttackGeneral
 {
     [SerializeField] private Transform player;
     [SerializeField] private GameObject attacker;
@@ -9,7 +9,6 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private int attackCombo;
     private int currentAttack;
     private float detectionDistance = 5f;
-    private bool startAttack = true;
 
     void Update()
     {
