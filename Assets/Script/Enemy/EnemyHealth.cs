@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
             animator.SetTrigger("Death");
             rb.gravityScale = 0;
             rb.linearVelocity = new Vector2(0, 0);
+            attacker.startAttack = false;
             capsule.enabled = false;
             attacker.enabled = false;
             move.enabled = false;
