@@ -6,6 +6,7 @@ public class EnemyBullet : MonoBehaviour
     
     [SerializeField] private int damage;
 
+    [SerializeField] private bool destroyByObstacles;
     // Update is called once per frame
     void Update()
     {
@@ -14,11 +15,22 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PleayrHealth>().GetDamage(damage);
+            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+            if (!playerHealth.isDeflecting)
+            {
+                playerHealth.GetDamage(damage);
+            }
             Destroy(gameObject);
         }
-        
+
+        if (destroyByObstacles)
+        {
+            if (collision.CompareTag("Obstacle"))
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private bool canDash = true;
     private bool wallJumping;
     private bool isWallrunning;
+    private bool canWallRun;
 
     void Update()
     {
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (canDash && Input.GetKeyDown(KeyCode.LeftShift))
+        if (canDash && Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded())
         {
             Dash();
             animator.SetTrigger("Dash");
@@ -49,6 +50,11 @@ public class PlayerController : MonoBehaviour
         if (isWallrunning && Input.GetKeyUp(KeyCode.Space))
         {
             Jump();
+        }
+
+        if (!IsGrounded() && Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            AirDash();
         }
 
         FlipCharacter();
@@ -80,7 +86,6 @@ public class PlayerController : MonoBehaviour
     {
         
         StartCoroutine(JumpWall());
-        //rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(objectToRotate.transform.right * jumpForce * direction, ForceMode2D.Impulse);
         print("Jump");
 
@@ -114,11 +119,19 @@ public class PlayerController : MonoBehaviour
         canDash = false;
        
         StartCoroutine(JumpWall());
-       
-        //rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+        
         rb.AddForce(objectToRotate.transform.right * jumpForce, ForceMode2D.Impulse);
     }
 
+    private void AirDash()
+    {
+        canDash = false;
+        
+        StartCoroutine(JumpWall());
+        animator.SetTrigger("AirDash");
+        
+        rb.AddForce(objectToRotate.transform.right * jumpForce * 1.5f, ForceMode2D.Impulse);
+    }
     private void FlipCharacter()
     {
         if (rb.linearVelocityX > 0)
@@ -133,12 +146,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-     
-        if (other.CompareTag("Wallrun") && Input.GetKey(KeyCode.Space) && !wallJumping)
+        
+        if (other.CompareTag("Wallrun"))
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
-            animator.SetBool("IsWalking", isWallrunning);
-            isWallrunning = true;
+            canWallRun = true;
+            if (Input.GetKey(KeyCode.Space) && !wallJumping)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+                animator.SetBool("IsWalking", isWallrunning);
+                isWallrunning = true;
+            }
         }
     }
 
@@ -147,6 +164,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Wallrun"))
         {
             isWallrunning = false;
+            canWallRun = false;
         }
     }
 }

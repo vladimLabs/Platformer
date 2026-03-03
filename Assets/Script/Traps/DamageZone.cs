@@ -7,9 +7,17 @@ public class DamageZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.CompareTag("Obstacle"))
         {
-            collision.GetComponent<PleayrHealth>().GetDamage(damage);
+            return;
+        }
+        if (collision.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+            if (!playerHealth.isDeflecting)
+            {
+                playerHealth.GetDamage(damage);
+            }
         }
     }
 }
