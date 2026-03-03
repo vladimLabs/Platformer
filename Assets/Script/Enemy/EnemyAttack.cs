@@ -1,0 +1,34 @@
+using System.Collections;
+using UnityEngine;
+
+public class EnemyAttack : EnemyAttackGeneral
+{
+    [SerializeField] private Transform player;
+    [SerializeField] private GameObject attacker;
+    [SerializeField] private Animator animator;
+    [SerializeField] private int attackCombo;
+    private int currentAttack;
+    private float detectionDistance = 5f;
+
+    void Update()
+    {
+        if (player != null)
+        {
+            float distance = Vector3.Distance(transform.position, player.position);
+
+            if (distance <= detectionDistance && startAttack == true)
+            {
+                StartCoroutine(FarmAttack());
+            }
+        }
+    }
+    
+    private IEnumerator FarmAttack()
+    {
+        startAttack = false;
+        animator.SetInteger("AttackNum", Random.Range(0, attackCombo));
+        animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(3f);
+        startAttack = true;
+    }
+}

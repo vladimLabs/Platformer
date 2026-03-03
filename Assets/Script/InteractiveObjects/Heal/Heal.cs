@@ -6,7 +6,7 @@ public class Heal : MonoBehaviour, IPickable
 
     public void PickUp()
     {
-        FindAnyObjectByType<PleayrHealth>().GetHeal(heal);
+        FindAnyObjectByType<PlayerHealth>().GetHeal(heal);
         Destroy(gameObject);
     }
 }

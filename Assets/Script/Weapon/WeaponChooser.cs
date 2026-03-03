@@ -4,7 +4,8 @@ public class WeaponChooser : MonoBehaviour
 {
     [SerializeField] private WeaponGeneral[] weapons;
     [SerializeField] private GameObject[] icons;
-
+    [SerializeField] private GameObject[] pistolSp;
+    [SerializeField] private GameObject[] swordSp;
     public int currentWeaponIndex;
 
     private void SwitchWeapon(int indexChange)
@@ -12,7 +13,7 @@ public class WeaponChooser : MonoBehaviour
         weapons[currentWeaponIndex].enabled = false;
 
         icons[currentWeaponIndex].transform.localScale = new Vector3(0.7f , 0.7f , 0.7f);
-
+        
         if (currentWeaponIndex + indexChange >= weapons.Length)
         {
             currentWeaponIndex = 0;
@@ -29,6 +30,21 @@ public class WeaponChooser : MonoBehaviour
         icons[currentWeaponIndex].transform.localScale = new Vector3(1, 1, 1);
 
         weapons[currentWeaponIndex].enabled = true;
+
+        if (currentWeaponIndex == 0)
+        {
+            pistolSp[0].SetActive(false);
+            pistolSp[1].SetActive(true);
+            swordSp[0].SetActive(true);
+            swordSp[1].SetActive(false);
+        }
+        if (currentWeaponIndex == 1)
+        {
+            pistolSp[0].SetActive(true);
+            pistolSp[1].SetActive(false);
+            swordSp[0].SetActive(false);
+            swordSp[1].SetActive(true);
+        }
     }
     private void Update()
     {
