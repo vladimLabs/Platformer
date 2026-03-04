@@ -162,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 455513994142279439}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.21830374, w: 0.97588086}
-  m_LocalPosition: {x: -0.083, y: 0.503, z: 0}
+  m_LocalPosition: {x: 0.119, y: 0.544, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0, b: 0.92926645, a: 1}
-  m_Intensity: 3.99
+  m_Intensity: 4.87
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Shop
   ShopPanel: {fileID: 5101321168196560786}
   playerAtac: {fileID: 0}
-  pleayrHealth: {fileID: 0}
+  playerHealthUI: {fileID: 0}
 --- !u!1 &3293984325923955403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,12 +1036,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9ad949e6ca1aa954c8dd99278c7c3e17, type: 3}
+  m_Sprite: {fileID: -5515851078783427038, guid: 084adc173a22e01488ad1df0f8a08d43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.22, y: 1.22}
+  m_Size: {x: 0.78, y: 1.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -302,7 +302,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1219837465348590796, guid: 636b5b0ee1855384481d2d1665ed8ec1, type: 3}
   rotationPart: {fileID: 5760123588506824565}
   offset: 0
-  detectionRadius: 15
+  detectionRadius: 7
   layerMask:
     serializedVersion: 2
     m_Bits: 8

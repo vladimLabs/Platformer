@@ -12,10 +12,8 @@ public class Attack3 : IAttack
     {
         mask = enemyLayerMask;
         Debug.Log("Attack 3");
-        
-        // Получаем направление атаки (right в 2D)
-        
-        playerMove.Dash();
+
+        //playerMove.Dash();
         
     }
     

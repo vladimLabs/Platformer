@@ -19,7 +19,7 @@ public class PlayerMeleWeapon : WeaponGeneral
         attackIndex++;
         if (attackIndex == 3)
         {
-            playerMove.Dash();
+            //playerMove.Dash();
             attackIndex = 0;
         }
        

@@ -5,7 +5,7 @@ public class Shop : MonoBehaviour
 {
     [SerializeField] private GameObject ShopPanel;
     [SerializeField] private PlayerMeleWeapon playerAtac;
-    [SerializeField] private HealthUI pleayrHealth;
+    [SerializeField] private HealthUI playerHealthUI;
     
 
     private void OnTriggerExit2D(Collider2D other)
@@ -29,7 +29,7 @@ public class Shop : MonoBehaviour
         if (CoinsText.Coin >= cost)
         {
             CoinsText.Coin -= cost;
-            pleayrHealth.AddHp();
+            playerHealthUI.ChangeHeartsCount(1);
         }
     }
 
