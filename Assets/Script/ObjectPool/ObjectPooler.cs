@@ -49,13 +49,14 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
         
+        objectToSpawn.SetActive(true);
+        
         IPooledObject pooledObject = objectToSpawn.GetComponent<IPooledObject>();
         if (pooledObject != null)
         {
-            pooledObject.OnObjectSpawn();
+            pooledObject.OnObjectSpawn(this);
         }
         
-        objectToSpawn.SetActive(true);
         
         return objectToSpawn;
     }

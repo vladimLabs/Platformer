@@ -1,16 +1,24 @@
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour, IPooledObject
 {
     [SerializeField] private Vector2 dir;
     
     [SerializeField] private int damage;
 
     [SerializeField] private bool destroyByObstacles;
-    // Update is called once per frame
+    
+    public ObjectPooler objectPooler;
+    
+    private ObjectPooler pooler;
+    private string poolName;
     void Update()
     {
         transform.Translate(dir * Time.deltaTime );
+    }
+    void Awake()
+    {
+        poolName = gameObject.name.Replace("(Clone)", "").Trim();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,15 +30,33 @@ public class EnemyBullet : MonoBehaviour
             {
                 playerHealth.GetDamage(damage);
             }
-            Destroy(gameObject);
+            ReturnToPool();
         }
 
         if (destroyByObstacles)
         {
             if (collision.CompareTag("Obstacle"))
             {
-                Destroy(gameObject);
+                ReturnToPool();
             }
         }
+    }
+    void ReturnToPool()
+    {
+        var isActive = false;
+        
+        if (pooler != null)
+        {
+            pooler.ReturnToPool(poolName, gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void OnObjectSpawn(ObjectPooler pool)
+    {
+        pooler = pool;
     }
 }

@@ -23,8 +23,8 @@ public class BossAttackController : EnemyAttackGeneral
     IEnumerator Attacking()
     {
         attack[Random.Range(0, attack.Length)].startAttack = true;
-        StartCoroutine(Attacking());
         yield return new WaitForSeconds(delayBetweenAttacks);
+        StartCoroutine(Attacking());
     }
 
     public void StartAttack()

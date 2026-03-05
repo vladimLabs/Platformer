@@ -18,7 +18,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Boss/BossAim.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Boss/BossAttack2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Boss/BossAttack3.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Boss/BossAttackController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Boss/BossGranade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Boss/BossMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/CameraFocusZones/CameraFocus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/ClosedDoor/ClosedDoor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -144,7 +146,7 @@
       <workItem from="1772641853176" duration="3548000" />
       <workItem from="1772663718110" duration="2350000" />
       <workItem from="1772705546702" duration="309000" />
-      <workItem from="1772706478998" duration="3112000" />
+      <workItem from="1772706478998" duration="7256000" />
     </task>
     <servers />
   </component>
