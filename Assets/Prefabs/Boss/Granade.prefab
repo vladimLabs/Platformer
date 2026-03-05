@@ -204,7 +204,7 @@ MonoBehaviour:
   explosionForce: 10
   explosionRadius: 5
   fuseTime: 4
-  minImpulseForce: 5
+  minImpulseForce: -35
   maxImpulseForce: 35
   explosionEffect: {fileID: 4352874877839985271, guid: f3e9e6a0961be5b49ac9c04371438606, type: 3}
   damageableLayers:

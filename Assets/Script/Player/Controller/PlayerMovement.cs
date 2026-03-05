@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public void WallJump(int direction)
     {
         rb.linearVelocity = Vector2.zero;
-        rb.AddForce(new Vector2(direction * wallJumpForce, jumpForce), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(direction * wallJumpForce * transform.right.x, jumpForce), ForceMode2D.Impulse);
     }
 
     public bool IsGrounded()

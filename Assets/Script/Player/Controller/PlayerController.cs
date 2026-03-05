@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (wallMechanics.CanWallJump())
             {
+                print(wallMechanics.GetWallDirection());
                 movement.WallJump(wallMechanics.GetWallDirection());
                 wallMechanics.StartWallJump();
             }

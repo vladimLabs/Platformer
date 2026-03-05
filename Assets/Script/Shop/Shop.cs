@@ -6,13 +6,14 @@ public class Shop : MonoBehaviour
     [SerializeField] private GameObject ShopPanel;
     [SerializeField] private PlayerMeleWeapon playerAtac;
     [SerializeField] private HealthUI playerHealthUI;
-    
+    [SerializeField] private GameObject InputPanel;
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             ShopPanel.SetActive(false);
+            InputPanel.SetActive(false);
         }
     }
 
@@ -20,7 +21,19 @@ public class Shop : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            ShopPanel.SetActive(true);
+            InputPanel.SetActive(true);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                InputPanel.SetActive(false);
+                ShopPanel.SetActive(true);
+            }
         }
     }
 

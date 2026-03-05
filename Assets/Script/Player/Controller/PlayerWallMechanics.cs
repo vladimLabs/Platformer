@@ -43,7 +43,11 @@ public class PlayerWallMechanics : MonoBehaviour
 
     public int GetWallDirection()
     {
-        return -1; 
+        if(transform.rotation.x == 0) 
+            return -1;
+        if(transform.rotation.x != 0) 
+            return 1;
+        return 0;
     }
 
     public void StartWallJump()
