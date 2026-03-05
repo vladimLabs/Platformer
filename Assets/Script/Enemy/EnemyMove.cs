@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMove : MonoBehaviour
+public class EnemyMove : CreatureMove
 {
     [SerializeField] private float speedEnemy;
     [SerializeField] private Rigidbody2D rb;
@@ -10,7 +10,7 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        if (IsRaged())
+        if (IsRaged() && canMove)
         {
             MoveEnemy();
         }

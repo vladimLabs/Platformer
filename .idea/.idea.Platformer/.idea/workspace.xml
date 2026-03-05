@@ -19,8 +19,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Script/Boss/BossAim.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Boss/BossAttack2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Boss/BossAttackController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Boss/BossMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/CameraFocusZones/CameraFocus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/ClosedDoor/ClosedDoor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Creature/CreatureMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Enemy/EnemyAttackGeneral.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/ObjectPool/ObjectPoolItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/ObjectPool/ObjectPooler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -141,6 +143,8 @@
       <workItem from="1772533667982" duration="5457000" />
       <workItem from="1772641853176" duration="3548000" />
       <workItem from="1772663718110" duration="2350000" />
+      <workItem from="1772705546702" duration="309000" />
+      <workItem from="1772706478998" duration="3112000" />
     </task>
     <servers />
   </component>

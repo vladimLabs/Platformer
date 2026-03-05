@@ -15,7 +15,7 @@ public class BossAttack1 : EnemyAttackGeneral
     [SerializeField] private ObjectPooler objectPooler;
     [SerializeField] private float shootCount;
     [SerializeField] float spreadAmount = 5f; 
-    
+    [SerializeField] private Animator animator;
     [SerializeField] private Transform player;
     private bool playerInRange = false;
     private float fireTimer = 0f;
@@ -41,7 +41,8 @@ public class BossAttack1 : EnemyAttackGeneral
     private void ShootFireRage()
     {
         if (bulletPrefab == null || firePoint == null) return;
-        
+        animator.SetTrigger("Attack");
+        animator.SetInteger("AttackNum", 0);
         float randomSpread = Random.Range(-spreadAmount, spreadAmount);
 
         Quaternion spreadRotation = rotationPart.rotation * Quaternion.Euler(0, 0, randomSpread);

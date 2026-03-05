@@ -9,11 +9,22 @@ public class BossAttackController : EnemyAttackGeneral
 
     [SerializeField] private EnemyAttackGeneral[] attack;
     
+    private bool isDead = false;
+    private void Update()
+    {
+        if (!startAttack && !isDead)
+        {
+            EndAttack();
+            isDead = true;
+            print("End");
+        }
+    }
+
     IEnumerator Attacking()
     {
-        yield return new WaitForSeconds(delayBetweenAttacks);
         attack[Random.Range(0, attack.Length)].startAttack = true;
         StartCoroutine(Attacking());
+        yield return new WaitForSeconds(delayBetweenAttacks);
     }
 
     public void StartAttack()

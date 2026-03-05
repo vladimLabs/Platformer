@@ -2,10 +2,10 @@ using UnityEngine;
 
 public abstract class CreatureHealth : MonoBehaviour
 {
-    [SerializeField] protected int health;
-    protected int healMax => health;
+    [SerializeField] protected float health;
+    protected float healMax => health;
 
-    public virtual void GetDamage(int damage)
+    public virtual void GetDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
@@ -14,7 +14,7 @@ public abstract class CreatureHealth : MonoBehaviour
         }
     }
 
-    public virtual void GetHeal(int heal)
+    public virtual void GetHeal(float heal)
     {
         if (health + heal > healMax)
         {
