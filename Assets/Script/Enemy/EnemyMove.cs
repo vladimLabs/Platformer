@@ -1,13 +1,19 @@
 using UnityEngine;
+using Zenject;
 
 public class EnemyMove : CreatureMove
 {
     [SerializeField] private float speedEnemy;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform player;
     [SerializeField] private float distance;
     [SerializeField] private Animator animator;
+    private Transform player;
 
+    [Inject]
+    private void Construct(PlayerMovement _player)
+    {
+        player = _player.transform;
+    }
     void Update()
     {
         if (IsRaged() && canMove)
