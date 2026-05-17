@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5760123588506824565}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8990346432758433202}
   - component: {fileID: 6828039159223643317}
   - component: {fileID: 1455425777148848169}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: New Piskel (73)_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 8441243145779670693}
   - component: {fileID: 1787284316943525457}
   - component: {fileID: 7374260298757606082}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DroneBody
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -196,9 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66bb285c0c199a4faff5950a9f9630f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  health: 2
   particle: {fileID: 275598190458795565}
   animator: {fileID: 1455425777148848169}
-  health: 2
   attacker: {fileID: 1787284316943525457}
   move: {fileID: 96013218873206265}
   capsule: {fileID: 7157139353846305329}
@@ -233,7 +233,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -252,11 +252,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf0dad94505a454aa4433467a590ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
+  canMove: 1
   speedEnemy: 2
   rb: {fileID: 8441243145779670693}
-  player: {fileID: 0}
   distance: 15
   animator: {fileID: 1455425777148848169}
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 328
 --- !u!50 &8441243145779670693
 Rigidbody2D:
   serializedVersion: 5
@@ -308,6 +311,7 @@ MonoBehaviour:
     m_Bits: 8
   objectPooler: {fileID: 7374260298757606082}
   player: {fileID: 0}
+  enemyMove: {fileID: 96013218873206265}
 --- !u!114 &7374260298757606082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,7 +336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8225502386734388787}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,9 +403,17 @@ PrefabInstance:
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 3796164871724959281, guid: 20cd5462d5928ed458fbbab9d4ee3e0b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4352874877839985271, guid: 20cd5462d5928ed458fbbab9d4ee3e0b, type: 3}
       propertyPath: m_Name
       value: Particle System (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352874877839985271, guid: 20cd5462d5928ed458fbbab9d4ee3e0b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8178291555600075135, guid: 20cd5462d5928ed458fbbab9d4ee3e0b, type: 3}
       propertyPath: m_LocalPosition.x

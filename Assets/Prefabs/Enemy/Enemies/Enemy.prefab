@@ -11284,9 +11284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66bb285c0c199a4faff5950a9f9630f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  health: 10
   particle: {fileID: 3511125570686096775}
   animator: {fileID: 3996961986441477626}
-  health: 10
   attacker: {fileID: 3747634965221158189}
   move: {fileID: 7935396453016685986}
   capsule: {fileID: 3720665573360689624}
@@ -11303,11 +11303,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf0dad94505a454aa4433467a590ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
+  canMove: 1
   speedEnemy: 3
   rb: {fileID: 7905366656120410930}
-  player: {fileID: 0}
   distance: 10
   animator: {fileID: 3996961986441477626}
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 328
 --- !u!114 &3747634965221158189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11320,6 +11323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e040fd25f4cab4b9e077847807a601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  startAttack: 1
   player: {fileID: 0}
   attacker: {fileID: 5625145576110048548}
   animator: {fileID: 3996961986441477626}

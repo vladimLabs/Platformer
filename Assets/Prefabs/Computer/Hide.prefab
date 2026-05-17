@@ -450,7 +450,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &8593549302201128339
 MonoBehaviour:
@@ -614,3 +614,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dcd316c1f3ed4b48a4fa0337c460271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShowingMassage
+  panel: {fileID: 0}

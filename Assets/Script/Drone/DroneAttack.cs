@@ -13,6 +13,7 @@ public class DroneAttack : EnemyAttackGeneral
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private ObjectPooler objectPooler;
     [SerializeField] private Transform player;
+    [SerializeField] private EnemyMove enemyMove;
     private bool playerInRange = false;
     private float fireTimer = 0f;
 
@@ -26,11 +27,10 @@ public class DroneAttack : EnemyAttackGeneral
     
     private void Update()
     {
-        playerInRange = Physics2D.OverlapCircle(transform.position, detectionRadius, layerMask);
-        if (playerInRange && startAttack)
+        if (enemyMove.GetIsRaged())
         {
             AimAtPlayer();
-            if (!isShot && startAttack) StartCoroutine(ShootLine());
+            if (!isShot) StartCoroutine(ShootLine());
         }
     }
     
@@ -47,7 +47,7 @@ public class DroneAttack : EnemyAttackGeneral
     
     private void Shoot()
     {
-        if (bulletPrefab == null || firePoint == null || !startAttack) return;
+        if (bulletPrefab == null || firePoint == null) return;
         
         GameObject bullet = objectPooler.GetFromPool(
             bulletPrefab.name, 
@@ -61,18 +61,13 @@ public class DroneAttack : EnemyAttackGeneral
     {
         isShot = true;
         print("shoot");
-        if (playerInRange)
-        {
+    
             yield return new WaitForSeconds(fireRate);
             for (int i = 0; i < 5; i++)
             {
-                if (startAttack)
-                {
                     yield return new WaitForSeconds(0.4f);
                     Shoot();
-                }
             }
-        }
 
         isShot = false;
     }

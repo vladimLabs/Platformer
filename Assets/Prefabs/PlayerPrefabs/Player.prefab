@@ -6770,6 +6770,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  heartPrefab: {fileID: 3894383678531781935, guid: 96cccfef78399d04e9166748ae8dfecb, type: 3}
+  heartParent: {fileID: 0}
 --- !u!114 &15727490296427795
 MonoBehaviour:
   m_ObjectHideFlags: 0

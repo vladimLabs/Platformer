@@ -42,7 +42,7 @@ public class Shop : MonoBehaviour
         if (CoinsText.Coin >= cost)
         {
             CoinsText.Coin -= cost;
-            playerHealthUI.ChangeHeartsCount(1);
+            playerHealthUI.AddHeart();
         }
     }
 
