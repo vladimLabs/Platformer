@@ -1,11 +1,18 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using Zenject;
 
 public class CoinsText : MonoBehaviour
 {
-    public static int Coin;
+    public int Coin;
     TextMeshProUGUI text;
+    private CoinsManeger coinsManeger;
+
+    [Inject]
+    private void Construct(CoinsManeger _coinsManeger)
+    {
+        coinsManeger = _coinsManeger;
+    }
 
     void Start()
     {
@@ -14,6 +21,6 @@ public class CoinsText : MonoBehaviour
 
     private void Update()
     {
-        text.text = Coin.ToString();
+        text.text = coinsManeger.GetCoin().ToString();
     }
 }

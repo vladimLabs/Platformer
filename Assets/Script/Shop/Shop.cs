@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class Shop : MonoBehaviour
 {
@@ -7,6 +8,13 @@ public class Shop : MonoBehaviour
     [SerializeField] private PlayerMeleWeapon playerAtac;
     [SerializeField] private HealthUI playerHealthUI;
     [SerializeField] private GameObject InputPanel;
+    private CoinsManeger coinsManeger;
+
+    [Inject]
+    private void Construct(CoinsManeger _coinsManeger)
+    {
+        coinsManeger = _coinsManeger;
+    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -39,18 +47,18 @@ public class Shop : MonoBehaviour
 
     public void BuyHP(int cost)
     {
-        if (CoinsText.Coin >= cost)
+        if (coinsManeger.GetCoin() >= cost)
         {
-            CoinsText.Coin -= cost;
+            coinsManeger.AddCoin(cost * -1);
             playerHealthUI.AddHeart();
         }
     }
 
     public void BuyDamage(int cost)
     {
-        if (CoinsText.Coin >= cost)
+        if (coinsManeger.GetCoin() >= cost)
         {
-            CoinsText.Coin -= cost;
+            coinsManeger.AddCoin(cost * -1);
             playerAtac.AddDamage(0.25f);
         }
     }

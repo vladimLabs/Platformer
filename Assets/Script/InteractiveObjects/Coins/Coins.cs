@@ -1,10 +1,20 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using Zenject;
 
 public class Coins : MonoBehaviour, IPickable
 {
+    private CoinsManeger coinsManeger;
+
+    [Inject]
+    private void Construct(CoinsManeger _coinsManeger)
+    {
+        coinsManeger =  _coinsManeger;
+    }
+
     public void PickUp()
     {
-        CoinsText.Coin += 1;
+        coinsManeger.AddCoin(1);
         Destroy(gameObject);
     }
 }
