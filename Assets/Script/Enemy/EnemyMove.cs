@@ -30,10 +30,13 @@ public class EnemyMove : CreatureMove
             Vector2 direction = (player.transform.position - transform.position).normalized;
             RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, obstacleLayerMask);
             Debug.DrawRay(transform.position, direction, Color.red);
-            print(hit.collider.name);
-            if(!hit.transform.CompareTag("Player")) return false;
-            print(hit.collider.name);
-            return true;
+            if(hit.collider != null)
+                if(!hit.transform.CompareTag("Player")) return false;
+                else
+                {
+                    return true;
+                }
+            else return false;
         }
         return false;
     }

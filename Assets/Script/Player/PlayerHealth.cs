@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,12 @@ public class PlayerHealth : CreatureHealth
     [SerializeField] private HealthUI healthUI;
     
     public bool isDeflecting = false;
+
+    private void Start()
+    {
+        health = PlayerPrefs.GetInt("HP");
+    }
+
     public override void GetDamage(float damage)
     {
         if(isDeflecting) return;

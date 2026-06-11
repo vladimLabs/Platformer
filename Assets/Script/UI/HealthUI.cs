@@ -22,6 +22,7 @@ public class HealthUI : MonoBehaviour
                 heart[i].SetActive(false);
             }
         }
+        Debug.Log(heartCount);
     }
 
     public void AddHeart()

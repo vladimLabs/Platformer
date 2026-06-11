@@ -26,6 +26,7 @@ public class EnemyHealth : CreatureHealth
         rb.gravityScale = 0;
         rb.linearVelocity = new Vector2(0, 0);
         attacker.startAttack = false;
+        attacker.SetCanShoot(false);
         capsule.enabled = false;
         //attacker.enabled = false;
         move.canMove = false;
